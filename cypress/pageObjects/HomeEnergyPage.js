@@ -1,6 +1,10 @@
 /// <reference types="Cypress" />
 
 class HomeEnergyPage {
+    getSectionName () {
+        return cy.get('.sectionName')
+    }
+
     getPrimaryHeatingSourceSelect () {
         return cy.get('#primaryHeatingSource')
     }

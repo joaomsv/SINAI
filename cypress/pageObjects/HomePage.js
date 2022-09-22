@@ -12,6 +12,18 @@ class Homepage {
     getGetStartedBtn () {
         return cy.get('#get-started')
     }
+
+    getInvalidFamNumMsg () {
+        return cy.get('#invalidNum')
+    }
+
+    getinvalidZipNumMsg () {
+        return cy.get('#invalidZipNum')
+    }
+
+    getinvalidZipMsg () {
+        return cy.get('#invalidZip')
+    }
 }
 
 export default Homepage
