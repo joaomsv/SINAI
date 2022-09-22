@@ -11,7 +11,7 @@ describe('Sinai Tests',()=>{
         cy.visit('/')
     })
     
-    it('Calculate carbon footprint: Simple happy flow',()=>{
+    it('Calculate carbon footprint: Simple happy path',()=>{
         const calculatorApi = new CalculatorApi()
         const homePage = new HomePage()
         const homeEnergyPage = new HomeEnergyPage()
