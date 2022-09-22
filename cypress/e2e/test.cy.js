@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import CalculatorApi from '../apiObjects/CalculatorApi'
 import HomePage from '../pageObjects/HomePage'
 import HomeEnergyPage from '../pageObjects/HomeEnergyPage'
 import TransportationPage from '../pageObjects/TransportationPage'
@@ -11,13 +12,14 @@ describe('Sinai Tests',()=>{
     })
     
     it('Calculate carbon footprint: Simple happy flow',()=>{
+        const calculatorApi = new CalculatorApi()
         const homePage = new HomePage()
         const homeEnergyPage = new HomeEnergyPage()
         const transportationPage = new TransportationPage()
         const wastePage = new WastePage()
         const resultsPage = new ResultsPage()
 
-        cy.intercept('GET','/carbon-footprint-calculator/data/egrid.csv').as('egrid')
+        calculatorApi.getEGrid().as('egrid')
 
         homePage.getHouseholdField().type('1')
         homePage.getZipCodeField().type('12345')
